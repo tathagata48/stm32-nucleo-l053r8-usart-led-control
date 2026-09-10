@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 980 760" font-family="Helvetica, Arial, sans-serif">
+<title>Connection diagram - USART-controlled 8-LED array on NUCLEO-L053R8</title>
+<rect x="0" y="0" width="980" height="760" fill="#FFFFFF"/>
+<text x="490" y="38" text-anchor="middle" font-size="19" font-weight="600" fill="#1A1A18">Connection Diagram</text>
+<text x="490" y="60" text-anchor="middle" font-size="13" fill="#6B6A66">USART-controlled 8-LED array · NUCLEO-L053R8 · serial over the ST-LINK virtual COM port</text>
+<rect x="40" y="86" width="900" height="84" rx="10" fill="#EEEDFE" stroke="#534AB7" stroke-width="1.2"/>
+<text x="490" y="112" text-anchor="middle" font-size="16" font-weight="600" fill="#26215C">NUCLEO-L053R8</text>
+<text x="490" y="133" text-anchor="middle" font-size="12" fill="#534AB7">USART2 on PA2 / PA3 reaches the host through the on-board ST-LINK — no serial wiring needed</text>
+<text x="490" y="152" text-anchor="middle" font-size="12" fill="#534AB7">Powered over USB only · nothing on the breadboard red (+) rail</text>
+<rect x="48" y="192" width="80" height="20" rx="10" fill="#FBE3E0" stroke="#BC2F1E" stroke-width="1"/>
+<text x="88" y="206" text-anchor="middle" font-size="10.5" font-weight="700" fill="#8A2015">bit 7 · 128</text>
+<text x="88" y="232" text-anchor="middle" font-size="13.5" font-weight="700" fill="#26215C">PB10</text>
+<text x="88" y="248" text-anchor="middle" font-size="10" fill="#7A72D6">D6 · CN9</text>
+<line x1="88" y1="256" x2="88" y2="284" stroke="#5F5E5A" stroke-width="1.8"/>
+<rect x="69" y="284" width="38" height="40" rx="3" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="1.2"/>
+<text x="88" y="309" text-anchor="middle" font-size="10" fill="#444441">330 Ω</text>
+<line x1="88" y1="324" x2="88" y2="358" stroke="#5F5E5A" stroke-width="1.8"/>
+<polygon points="69,358 107,358 88,392" fill="#FBE3E0" stroke="#BC2F1E" stroke-width="1.4"/>
+<line x1="69" y1="392" x2="107" y2="392" stroke="#BC2F1E" stroke-width="3"/>
+<line x1="88" y1="392" x2="88" y2="470" stroke="#5F5E5A" stroke-width="1.8"/>
+<rect x="148" y="192" width="80" height="20" rx="10" fill="#FBE3E0" stroke="#BC2F1E" stroke-width="1"/>
+<text x="188" y="206" text-anchor="middle" font-size="10.5" font-weight="700" fill="#8A2015">bit 6 · 64</text>
+<text x="188" y="232" text-anchor="middle" font-size="13.5" font-weight="700" fill="#26215C">PB9</text>
+<text x="188" y="248" text-anchor="middle" font-size="10" fill="#7A72D6">D14 / SDA · CN5</text>
+<line x1="188" y1="256" x2="188" y2="284" stroke="#5F5E5A" stroke-width="1.8"/>
+<rect x="169" y="284" width="38" height="40" rx="3" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="1.2"/>
+<text x="188" y="309" text-anchor="middle" font-size="10" fill="#444441">330 Ω</text>
+<line x1="188" y1="324" x2="188" y2="358" stroke="#5F5E5A" stroke-width="1.8"/>
+<polygon points="169,358 207,358 188,392" fill="#FBE3E0" stroke="#BC2F1E" stroke-width="1.4"/>
+<line x1="169" y1="392" x2="207" y2="392" stroke="#BC2F1E" stroke-width="3"/>
+<line x1="188" y1="392" x2="188" y2="470" stroke="#5F5E5A" stroke-width="1.8"/>
+<rect x="248" y="192" width="80" height="20" rx="10" fill="#FBE3E0" stroke="#BC2F1E" stroke-width="1"/>
+<text x="288" y="206" text-anchor="middle" font-size="10.5" font-weight="700" fill="#8A2015">bit 5 · 32</text>
+<text x="288" y="232" text-anchor="middle" font-size="13.5" font-weight="700" fill="#26215C">PB8</text>
+<text x="288" y="248" text-anchor="middle" font-size="10" fill="#7A72D6">D15 / SCL · CN5</text>
+<line x1="288" y1="256" x2="288" y2="284" stroke="#5F5E5A" stroke-width="1.8"/>
+<rect x="269" y="284" width="38" height="40" rx="3" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="1.2"/>
+<text x="288" y="309" text-anchor="middle" font-size="10" fill="#444441">330 Ω</text>
+<line x1="288" y1="324" x2="288" y2="358" stroke="#5F5E5A" stroke-width="1.8"/>
+<polygon points="269,358 307,358 288,392" fill="#FBE3E0" stroke="#BC2F1E" stroke-width="1.4"/>
+<line x1="269" y1="392" x2="307" y2="392" stroke="#BC2F1E" stroke-width="3"/>
+<line x1="288" y1="392" x2="288" y2="470" stroke="#5F5E5A" stroke-width="1.8"/>
+<rect x="348" y="192" width="80" height="20" rx="10" fill="#FBE3E0" stroke="#BC2F1E" stroke-width="1"/>
+<text x="388" y="206" text-anchor="middle" font-size="10.5" font-weight="700" fill="#8A2015">bit 4 · 16</text>
+<text x="388" y="232" text-anchor="middle" font-size="13.5" font-weight="700" fill="#26215C">PB13</text>
+<text x="388" y="248" text-anchor="middle" font-size="10" fill="#7A72D6">CN10 · morpho</text>
+<line x1="388" y1="256" x2="388" y2="284" stroke="#5F5E5A" stroke-width="1.8"/>
+<rect x="369" y="284" width="38" height="40" rx="3" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="1.2"/>
+<text x="388" y="309" text-anchor="middle" font-size="10" fill="#444441">330 Ω</text>
+<line x1="388" y1="324" x2="388" y2="358" stroke="#5F5E5A" stroke-width="1.8"/>
+<polygon points="369,358 407,358 388,392" fill="#FBE3E0" stroke="#BC2F1E" stroke-width="1.4"/>
+<line x1="369" y1="392" x2="407" y2="392" stroke="#BC2F1E" stroke-width="3"/>
+<line x1="388" y1="392" x2="388" y2="470" stroke="#5F5E5A" stroke-width="1.8"/>
+<rect x="448" y="192" width="80" height="20" rx="10" fill="#FBE3E0" stroke="#BC2F1E" stroke-width="1"/>
+<text x="488" y="206" text-anchor="middle" font-size="10.5" font-weight="700" fill="#8A2015">bit 3 · 8</text>
+<text x="488" y="232" text-anchor="middle" font-size="13.5" font-weight="700" fill="#26215C">PB5</text>
+<text x="488" y="248" text-anchor="middle" font-size="10" fill="#7A72D6">D4 · CN9</text>
+<line x1="488" y1="256" x2="488" y2="284" stroke="#5F5E5A" stroke-width="1.8"/>
+<rect x="469" y="284" width="38" height="40" rx="3" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="1.2"/>
+<text x="488" y="309" text-anchor="middle" font-size="10" fill="#444441">330 Ω</text>
+<line x1="488" y1="324" x2="488" y2="358" stroke="#5F5E5A" stroke-width="1.8"/>
+<polygon points="469,358 507,358 488,392" fill="#FBE3E0" stroke="#BC2F1E" stroke-width="1.4"/>
+<line x1="469" y1="392" x2="507" y2="392" stroke="#BC2F1E" stroke-width="3"/>
+<line x1="488" y1="392" x2="488" y2="470" stroke="#5F5E5A" stroke-width="1.8"/>
+<rect x="548" y="192" width="80" height="20" rx="10" fill="#FBE3E0" stroke="#BC2F1E" stroke-width="1"/>
+<text x="588" y="206" text-anchor="middle" font-size="10.5" font-weight="700" fill="#8A2015">bit 2 · 4</text>
+<text x="588" y="232" text-anchor="middle" font-size="13.5" font-weight="700" fill="#26215C">PB2</text>
+<text x="588" y="248" text-anchor="middle" font-size="10" fill="#7A72D6">CN10 · morpho</text>
+<line x1="588" y1="256" x2="588" y2="284" stroke="#5F5E5A" stroke-width="1.8"/>
+<rect x="569" y="284" width="38" height="40" rx="3" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="1.2"/>
+<text x="588" y="309" text-anchor="middle" font-size="10" fill="#444441">330 Ω</text>
+<line x1="588" y1="324" x2="588" y2="358" stroke="#5F5E5A" stroke-width="1.8"/>
+<polygon points="569,358 607,358 588,392" fill="#FBE3E0" stroke="#BC2F1E" stroke-width="1.4"/>
+<line x1="569" y1="392" x2="607" y2="392" stroke="#BC2F1E" stroke-width="3"/>
+<line x1="588" y1="392" x2="588" y2="470" stroke="#5F5E5A" stroke-width="1.8"/>
+<rect x="648" y="192" width="80" height="20" rx="10" fill="#FBE3E0" stroke="#BC2F1E" stroke-width="1"/>
+<text x="688" y="206" text-anchor="middle" font-size="10.5" font-weight="700" fill="#8A2015">bit 1 · 2</text>
+<text x="688" y="232" text-anchor="middle" font-size="13.5" font-weight="700" fill="#26215C">PB1</text>
+<text x="688" y="248" text-anchor="middle" font-size="10" fill="#7A72D6">CN10 · morpho</text>
+<line x1="688" y1="256" x2="688" y2="284" stroke="#5F5E5A" stroke-width="1.8"/>
+<rect x="669" y="284" width="38" height="40" rx="3" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="1.2"/>
+<text x="688" y="309" text-anchor="middle" font-size="10" fill="#444441">330 Ω</text>
+<line x1="688" y1="324" x2="688" y2="358" stroke="#5F5E5A" stroke-width="1.8"/>
+<polygon points="669,358 707,358 688,392" fill="#FBE3E0" stroke="#BC2F1E" stroke-width="1.4"/>
+<line x1="669" y1="392" x2="707" y2="392" stroke="#BC2F1E" stroke-width="3"/>
+<line x1="688" y1="392" x2="688" y2="470" stroke="#5F5E5A" stroke-width="1.8"/>
+<rect x="748" y="192" width="80" height="20" rx="10" fill="#FBE3E0" stroke="#BC2F1E" stroke-width="1"/>
+<text x="788" y="206" text-anchor="middle" font-size="10.5" font-weight="700" fill="#8A2015">bit 0 · 1</text>
+<text x="788" y="232" text-anchor="middle" font-size="13.5" font-weight="700" fill="#26215C">PB0</text>
+<text x="788" y="248" text-anchor="middle" font-size="10" fill="#7A72D6">A3 · CN8</text>
+<line x1="788" y1="256" x2="788" y2="284" stroke="#5F5E5A" stroke-width="1.8"/>
+<rect x="769" y="284" width="38" height="40" rx="3" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="1.2"/>
+<text x="788" y="309" text-anchor="middle" font-size="10" fill="#444441">330 Ω</text>
+<line x1="788" y1="324" x2="788" y2="358" stroke="#5F5E5A" stroke-width="1.8"/>
+<polygon points="769,358 807,358 788,392" fill="#FBE3E0" stroke="#BC2F1E" stroke-width="1.4"/>
+<line x1="769" y1="392" x2="807" y2="392" stroke="#BC2F1E" stroke-width="3"/>
+<line x1="788" y1="392" x2="788" y2="470" stroke="#5F5E5A" stroke-width="1.8"/>
+<text x="88" y="184" text-anchor="middle" font-size="10.5" font-weight="700" fill="#8A8880">MSB</text>
+<text x="788" y="184" text-anchor="middle" font-size="10.5" font-weight="700" fill="#8A8880">LSB</text>
+<text x="890" y="232" text-anchor="middle" font-size="13.5" font-weight="700" fill="#26215C">GND</text>
+<text x="890" y="248" text-anchor="middle" font-size="10" fill="#7A72D6">CN6 / CN7</text>
+<line x1="890" y1="256" x2="890" y2="470" stroke="#5F5E5A" stroke-width="1.8"/>
+<line x1="48" y1="470" x2="930" y2="470" stroke="#378ADD" stroke-width="5" stroke-linecap="round"/>
+<text x="48" y="496" font-size="12" font-weight="600" fill="#185FA5">Breadboard blue (−) rail</text>
+<text x="196" y="496" font-size="12" fill="#4B7FBB">— bridge the two halves with a jumper; most 830-point boards split it in the middle.</text>
+<line x1="880" y1="470" x2="880" y2="500" stroke="#5F5E5A" stroke-width="1.8"/>
+<line x1="856" y1="500" x2="904" y2="500" stroke="#5F5E5A" stroke-width="3"/>
+<line x1="864" y1="512" x2="896" y2="512" stroke="#5F5E5A" stroke-width="3"/>
+<line x1="872" y1="524" x2="888" y2="524" stroke="#5F5E5A" stroke-width="3"/>
+<line x1="40" y1="548" x2="940" y2="548" stroke="#D3D1C7" stroke-width="1"/>
+<text x="40" y="572" font-size="12.5" font-weight="700" fill="#1A1A18">Serial path — already on the board</text>
+<defs><marker id="ar" markerWidth="9" markerHeight="9" refX="7" refY="3.2" orient="auto"><path d="M0,0 L7,3.2 L0,6.4 z" fill="#5F5E5A"/></marker></defs>
+<rect x="40" y="586" width="180" height="66" rx="6" fill="#E4F0FB" stroke="#2C6DA8" stroke-width="1.2"/>
+<text x="130" y="614" text-anchor="middle" font-size="12.5" font-weight="600" fill="#14415F">Host PC</text>
+<text x="130" y="633" text-anchor="middle" font-size="11" fill="#2C6DA8">terminal @ 19200 8N1</text>
+<line x1="224" y1="619" x2="262" y2="619" stroke="#5F5E5A" stroke-width="1.6" marker-end="url(#ar)"/>
+<rect x="268" y="586" width="180" height="66" rx="6" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="1.2"/>
+<text x="358" y="614" text-anchor="middle" font-size="12.5" font-weight="600" fill="#2C2C2A">USB micro-B</text>
+<text x="358" y="633" text-anchor="middle" font-size="11" fill="#5F5E5A">power and data</text>
+<line x1="452" y1="619" x2="490" y2="619" stroke="#5F5E5A" stroke-width="1.6" marker-end="url(#ar)"/>
+<rect x="496" y="586" width="180" height="66" rx="6" fill="#EEEDFE" stroke="#534AB7" stroke-width="1.2"/>
+<text x="586" y="614" text-anchor="middle" font-size="12.5" font-weight="600" fill="#26215C">ST-LINK VCP</text>
+<text x="586" y="633" text-anchor="middle" font-size="11" fill="#534AB7">on-board debugger</text>
+<line x1="680" y1="619" x2="718" y2="619" stroke="#5F5E5A" stroke-width="1.6" marker-end="url(#ar)"/>
+<rect x="724" y="586" width="180" height="66" rx="6" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1.2"/>
+<text x="814" y="614" text-anchor="middle" font-size="12.5" font-weight="600" fill="#0A4D3C">USART2</text>
+<text x="814" y="633" text-anchor="middle" font-size="11" fill="#0F6E56">PA2 TX · PA3 RX</text>
+<line x1="40" y1="682" x2="940" y2="682" stroke="#D3D1C7" stroke-width="1"/>
+<text x="40" y="708" font-size="12" font-weight="700" fill="#1A1A18">Each LED branch:</text>
+<text x="166" y="708" font-size="12" fill="#444441">pin → 330 Ω resistor → LED long leg · LED short leg (bar side) → blue rail</text>
+<text x="40" y="730" font-size="12" font-weight="700" fill="#854F0B">PB3, PB4, PA2 and PA3 avoided:</text>
+<text x="248" y="730" font-size="12" fill="#444441">PB3 / PB4 carry SWO and NJTRST; PA2 / PA3 are the virtual COM port.</text>
+</svg>

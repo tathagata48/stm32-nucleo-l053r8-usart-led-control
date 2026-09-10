@@ -1,0 +1,10 @@
+# STM32CubeIDE build output
+/Debug/
+/Release/
+
+# Eclipse/CubeIDE local metadata
+*.launch
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db

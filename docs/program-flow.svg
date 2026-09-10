@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 980 800" font-family="Helvetica, Arial, sans-serif">
+<title>Program flow - interrupt-driven receive and main-loop command parsing</title>
+<rect x="0" y="0" width="980" height="800" fill="#FFFFFF"/>
+<defs><marker id="ar" markerWidth="9" markerHeight="9" refX="7" refY="3.2" orient="auto"><path d="M0,0 L7,3.2 L0,6.4 z" fill="#5F5E5A"/></marker></defs>
+<text x="490" y="36" text-anchor="middle" font-size="19" font-weight="600" fill="#1A1A18">Program Flow</text>
+<text x="490" y="58" text-anchor="middle" font-size="13" fill="#6B6A66">Bytes are captured in the interrupt handler; whole lines are parsed in the main loop</text>
+<rect x="14" y="98" width="292" height="558" rx="10" fill="#FAFAF8" stroke="#E6E4DC" stroke-width="1"/>
+<rect x="486" y="98" width="490" height="670" rx="10" fill="#FAFAF8" stroke="#E6E4DC" stroke-width="1"/>
+<text x="160" y="88" text-anchor="middle" font-size="12.5" font-weight="700" fill="#854F0B">Interrupt context</text>
+<text x="731" y="88" text-anchor="middle" font-size="12.5" font-weight="700" fill="#534AB7">Main loop</text>
+<rect x="30" y="140" width="260" height="44" rx="22" fill="#EEEDFE" stroke="#534AB7" stroke-width="1.2"/>
+<text x="160" y="166" text-anchor="middle" font-size="12.2" font-weight="600" fill="#26215C">Byte arrives on PA3 (RX)</text>
+<line x1="160" y1="184" x2="160" y2="206" stroke="#5F5E5A" stroke-width="1.6" marker-end="url(#ar)"/>
+<rect x="30" y="210" width="260" height="52" rx="6" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="1.2"/>
+<text x="160" y="232" text-anchor="middle" font-size="12.2" font-weight="600" fill="#2C2C2A">RXNE set in USART2-&gt;ISR</text>
+<text x="160" y="248" text-anchor="middle" font-size="11.8" fill="#5F5E5A">NVIC vectors to the handler</text>
+<line x1="160" y1="262" x2="160" y2="284" stroke="#5F5E5A" stroke-width="1.6" marker-end="url(#ar)"/>
+<rect x="30" y="288" width="260" height="44" rx="6" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="1.2"/>
+<text x="160" y="314" text-anchor="middle" font-size="12.2" font-weight="600" fill="#2C2C2A">int_val = ISR &amp; RXNE</text>
+<line x1="160" y1="332" x2="160" y2="352" stroke="#5F5E5A" stroke-width="1.6" marker-end="url(#ar)"/>
+<rect x="30" y="356" width="260" height="52" rx="6" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="1.2"/>
+<text x="160" y="378" text-anchor="middle" font-size="12.2" font-weight="600" fill="#2C2C2A">usart_data = USART2-&gt;RDR</text>
+<text x="160" y="394" text-anchor="middle" font-size="11.8" fill="#5F5E5A">reading RDR clears RXNE</text>
+<line x1="160" y1="408" x2="160" y2="430" stroke="#5F5E5A" stroke-width="1.6" marker-end="url(#ar)"/>
+<rect x="30" y="434" width="260" height="52" rx="6" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1.2"/>
+<text x="160" y="456" text-anchor="middle" font-size="12.2" font-weight="600" fill="#0A4D3C">Push into rx_buf</text>
+<text x="160" y="472" text-anchor="middle" font-size="11.8" fill="#0F6E56">byte dropped if the buffer is full</text>
+<line x1="160" y1="486" x2="160" y2="508" stroke="#5F5E5A" stroke-width="1.6" marker-end="url(#ar)"/>
+<rect x="30" y="512" width="260" height="44" rx="6" fill="#FAEEDA" stroke="#854F0B" stroke-width="1.2"/>
+<text x="160" y="538" text-anchor="middle" font-size="12.2" font-weight="600" fill="#633806">Clear ORE via ICR if latched</text>
+<line x1="160" y1="556" x2="160" y2="578" stroke="#5F5E5A" stroke-width="1.6" marker-end="url(#ar)"/>
+<rect x="30" y="582" width="260" height="44" rx="22" fill="#EEEDFE" stroke="#534AB7" stroke-width="1.2"/>
+<text x="160" y="608" text-anchor="middle" font-size="12.2" font-weight="600" fill="#26215C">Return from ISR</text>
+<rect x="330" y="360" width="140" height="200" rx="16" fill="#E4F0FB" stroke="#2C6DA8" stroke-width="1.4"/>
+<text x="400" y="402" text-anchor="middle" font-size="13" font-weight="700" fill="#14415F">rx_buf[64]</text>
+<text x="400" y="421" text-anchor="middle" font-size="11.5" font-weight="400" fill="#2C6DA8">ring buffer</text>
+<rect x="352" y="446" width="96" height="12" rx="2" fill="#FFFFFF" stroke="#2C6DA8" stroke-width="0.9" opacity="1"/>
+<rect x="352" y="462" width="96" height="12" rx="2" fill="#FFFFFF" stroke="#2C6DA8" stroke-width="0.9" opacity="1"/>
+<rect x="352" y="478" width="96" height="12" rx="2" fill="#FFFFFF" stroke="#2C6DA8" stroke-width="0.9" opacity="1"/>
+<rect x="352" y="494" width="96" height="12" rx="2" fill="#FFFFFF" stroke="#2C6DA8" stroke-width="0.9" opacity="0.45"/>
+<rect x="352" y="510" width="96" height="12" rx="2" fill="#FFFFFF" stroke="#2C6DA8" stroke-width="0.9" opacity="0.45"/>
+<rect x="352" y="526" width="96" height="12" rx="2" fill="#FFFFFF" stroke="#2C6DA8" stroke-width="0.9" opacity="0.45"/>
+<text x="400" y="558" text-anchor="middle" font-size="10.5" fill="#2C6DA8">rx_head / rx_tail</text>
+<text x="400" y="578" text-anchor="middle" font-size="10" fill="#6B6A66">volatile · written in the ISR,</text>
+<text x="400" y="592" text-anchor="middle" font-size="10" fill="#6B6A66">drained in the main loop</text>
+<line x1="290" y1="460" x2="326" y2="460" stroke="#5F5E5A" stroke-width="1.6" marker-end="url(#ar)"/>
+<path d="M470,460 L492,460 A 8 8 0 0 1 508,460 L566,460" fill="none" stroke="#5F5E5A" stroke-width="1.6" marker-end="url(#ar)"/>
+<rect x="541" y="140" width="380" height="40" rx="20" fill="#EEEDFE" stroke="#534AB7" stroke-width="1.2"/>
+<text x="731" y="164" text-anchor="middle" font-size="12.2" font-weight="600" fill="#26215C">Reset / power-on</text>
+<line x1="731" y1="180" x2="731" y2="202" stroke="#5F5E5A" stroke-width="1.6" marker-end="url(#ar)"/>
+<rect x="541" y="206" width="380" height="48" rx="6" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="1.2"/>
+<text x="731" y="226" text-anchor="middle" font-size="12.2" font-weight="600" fill="#2C2C2A">clock_init_hsi16() · leds_init() · usart2_init()</text>
+<text x="731" y="242" text-anchor="middle" font-size="11.8" fill="#5F5E5A">SYSCLK → HSI16 · BRR = 833 · RXNEIE + NVIC on</text>
+<line x1="731" y1="254" x2="731" y2="276" stroke="#5F5E5A" stroke-width="1.6" marker-end="url(#ar)"/>
+<rect x="541" y="280" width="380" height="40" rx="6" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="1.2"/>
+<text x="731" y="304" text-anchor="middle" font-size="12.2" font-weight="600" fill="#2C2C2A">send “STM32 ready”</text>
+<line x1="731" y1="320" x2="731" y2="412" stroke="#5F5E5A" stroke-width="1.6" marker-end="url(#ar)"/>
+<circle cx="731" cy="340" r="3.4" fill="#5F5E5A"/>
+<polygon points="731,416 891,460 731,504 571,460" fill="#E4F0FB" stroke="#2C6DA8" stroke-width="1.2"/>
+<text x="731" y="455" text-anchor="middle" font-size="12.2" font-weight="600" fill="#14415F">rx_get(&amp;c) — byte waiting?</text>
+<text x="731" y="472" text-anchor="middle" font-size="11" fill="#2C6DA8">rx_head != rx_tail</text>
+<text x="741" y="524" font-size="11.5" font-weight="600" fill="#2C6DA8">yes</text>
+<line x1="731" y1="504" x2="731" y2="542" stroke="#5F5E5A" stroke-width="1.6" marker-end="url(#ar)"/>
+<text x="899" y="452" font-size="11.5" font-weight="600" fill="#2C6DA8">no</text>
+<line x1="891" y1="460" x2="936" y2="460" stroke="#5F5E5A" stroke-width="1.6"/>
+<line x1="936" y1="460" x2="936" y2="340" stroke="#5F5E5A" stroke-width="1.6"/>
+<line x1="936" y1="340" x2="735" y2="340" stroke="#5F5E5A" stroke-width="1.6"/>
+<polygon points="731,546 891,590 731,634 571,590" fill="#E4F0FB" stroke="#2C6DA8" stroke-width="1.2"/>
+<text x="731" y="585" text-anchor="middle" font-size="12.2" font-weight="600" fill="#14415F">c is CR or LF?</text>
+<text x="731" y="602" text-anchor="middle" font-size="11" fill="#2C6DA8">end of one packet</text>
+<text x="741" y="654" font-size="11.5" font-weight="600" fill="#2C6DA8">yes</text>
+<line x1="731" y1="634" x2="731" y2="662" stroke="#5F5E5A" stroke-width="1.6" marker-end="url(#ar)"/>
+<text x="536" y="582" font-size="11.5" font-weight="600" fill="#2C6DA8">no</text>
+<text x="512" y="616" font-size="10.5" fill="#6B6A66">line[len++] = c</text>
+<line x1="571" y1="590" x2="500" y2="590" stroke="#5F5E5A" stroke-width="1.6"/>
+<line x1="500" y1="590" x2="500" y2="340" stroke="#5F5E5A" stroke-width="1.6"/>
+<line x1="500" y1="340" x2="727" y2="340" stroke="#5F5E5A" stroke-width="1.6"/>
+<rect x="541" y="666" width="380" height="52" rx="6" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1.2"/>
+<text x="731" y="688" text-anchor="middle" font-size="12.2" font-weight="600" fill="#0A4D3C">handle_line(line)</text>
+<text x="731" y="704" text-anchor="middle" font-size="11.8" fill="#0F6E56">dispatch E / N / F / P / Q, then reply over USART2</text>
+<line x1="731" y1="718" x2="731" y2="748" stroke="#5F5E5A" stroke-width="1.6"/>
+<line x1="731" y1="748" x2="500" y2="748" stroke="#5F5E5A" stroke-width="1.6"/>
+<line x1="500" y1="748" x2="500" y2="590" stroke="#5F5E5A" stroke-width="1.6"/>
+<text x="512" y="740" font-size="11" fill="#8A8880">loop</text>
+<text x="490" y="790" text-anchor="middle" font-size="11" fill="#8A8880">The handler never blocks: it only moves one byte. All parsing and every reply happen in the main loop.</text>
+</svg>
