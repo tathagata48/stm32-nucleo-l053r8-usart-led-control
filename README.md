@@ -8,6 +8,13 @@ number as a bit pattern, or ask what is currently lit.
 Receive is interrupt-driven. The handler does nothing but move one byte into a
 ring buffer; every line is assembled, parsed and answered from the main loop.
 
+## Demo
+
+Sending `P170` over the serial port lights the matching bit pattern — `10101010`
+across PB10, PB8, PB5 and PB1.
+
+![Demo — typing P170 in the terminal lights the alternating pattern on the LED array](docs/demo.gif)
+
 ## Command protocol
 
 One command per line, terminated by CR or LF. Letters are case-insensitive.
